@@ -5,7 +5,7 @@
 
 ## What it does
 
-1. **Ingestion** — On startup, all Markdown/CSV/TXT files under `docs/acme-cloud/` (a fictional SaaS product called *Acme Cloud*) are read, split into ~800-token chunks, embedded, and stored in a **Chroma** vector database.
+1. **Ingestion** — On startup, all Markdown/CSV/TXT files under `rag-docs/acme-cloud/` (a fictional SaaS product called *Acme Cloud*) are read, split into ~800-token chunks, embedded, and stored in a **Chroma** vector database.
 2. **Chat** — `GET /chat` retrieves the most relevant chunks for a question via a `QuestionAnswerAdvisor`, adds **conversation memory** (in-memory, keyed by a session ID), and returns the answer plus the **source file names** used.
 3. **UI** — A dependency-free static chat page served at `http://localhost:8080/`.
 
@@ -37,7 +37,7 @@
 
 ```properties
 # Docs to ingest
-ragai.docs.location=docs/acme-cloud
+ragai.docs.location=rag-docs/acme-cloud
 ragai.ingest.on-startup=true
 ragai.ingest.state-file=.ingest-state.properties
 
@@ -125,7 +125,7 @@ docs/acme-cloud/                    # Fictional knowledge base (21 files)
 - Delete `.ingest-state.properties` (or `POST /ingest?force=true`) to re-embed everything.
 - Session memory is in-memory only — restarting the app clears conversations; the UI picks up the new state automatically via `sessionId`.
 - After renaming or moving Java classes, run `mvnw clean compile` — stale `.class` files in `target/` can cause phantom duplicate beans.
-- The `docs/acme-cloud/` content is entirely fictional and exists to give the RAG pipeline something to retrieve.
+- The `rag-docs/acme-cloud/` content is entirely fictional and exists to give the RAG pipeline something to retrieve.
 
 ---
 
