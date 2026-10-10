@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acme Cloud Assistant</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="chat-app">
+	<header>
+		<h1>Acme Cloud Assistant</h1>
+		<div class="actions">
+			<button id="new-chat">New chat</button>
+			<button id="reingest" title="Force re-ingest docs into the vector store">Re-ingest docs</button>
+		</div>
+	</header>
+
+	<section id="messages" aria-live="polite"></section>
+
+	<div class="suggest">
+		<button class="chip">Which plan has SCIM?</button>
+		<button class="chip">What happens after 7 days of webhook failures?</button>
+		<button class="chip">How do I get a backup restore?</button>
+	</div>
+
+	<form id="ask-form">
+		<input id="question" type="text" placeholder="Ask about Acme Cloud..." autocomplete="off" required>
+		<button type="submit" id="send">Send</button>
+	</form>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
