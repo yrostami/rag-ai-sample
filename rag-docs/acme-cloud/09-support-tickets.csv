@@ -1,0 +1,26 @@
+id,subject,description,resolution
+1,401 error,API returns 401 Unauthorized,Regenerate API key and update Authorization header
+2,Export fails,CSV export times out for 1 year range,Export in 30-day ranges
+3,Invite missing,New member did not receive invite email,Check spam and resend invite
+4,Rate limit,Too many API requests,Wait 60 seconds or upgrade plan
+5,SSO unavailable,SSO option not visible on Free plan,Upgrade to Pro or Enterprise
+6,Webhook not received,Endpoint never receives events,Verify signature uses raw body and whsec_ secret and endpoint returns 2xx
+7,SSO login loop,User redirected repeatedly between IdP and Acme,Sync IdP clock with NTP (drift over 90 seconds)
+8,2FA code rejected,TOTP code always invalid,Sync device clock and rescan QR code
+9,File upload fails,Upload rejected over size limit,Compress file or upgrade plan (25 MB Free / 1 GB Pro / 5 GB Enterprise)
+10,Search missing results,Recent tasks do not appear in search,Wait a few minutes for the search index to catch up
+11,Import column error,CSV import rejects file,Use template columns title,status,assignee_email,due_date
+12,Webhook duplicates,Handler receives the same event twice,Make handler idempotent using the event id
+13,Rate limit on Pro,429 errors during load testing,Reduce frequency or request a custom limit on Enterprise
+14,Restore request,Accidental project deletion,Owner emails support@acme.example to restore from daily backup into a restored workspace
+15,Data residency,Workspace needs EU-only processing,Create workspace in eu-west region; residency cannot be changed later
+16,Pagination cap,API never returns more than 100 items,Page with limit and offset until data array is empty
+17,API key leaked,Key committed to git repository,Regenerate key immediately and rotate the secret in CI
+18,Audit log access,Cannot find audit logs,Available on Enterprise under Settings > Audit Logs
+19,Viewer permissions,Viewer cannot edit a task,Viewers are read-only; assign the Member role instead
+20,Invite pending,Invite not accepted after a week,Resend invite; invites expire after 14 days
+21,Storage quota reached,Uploads blocked on Free plan,Free up space or upgrade to Pro for 100 GB
+22,SLA credit request,Downtime beyond the 99.9% target,Enterprise submits credit request within 30 days
+23,Slack integration delay,Notifications arrive minutes late,Known issue for large workspaces; see Known Issues
+24,Comment history,Need to view an edited comment,Comment edit history is kept 30 days; contact support
+25,API key expiry,Key stopped working without warning,Check optional expiry date set on the key in Settings > API Keys
